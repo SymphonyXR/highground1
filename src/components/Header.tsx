@@ -6,7 +6,7 @@ export const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="text-2xl font-bold bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
+          <div className="text-2xl font-bold text-[#FDE1D3]">
             High Ground
           </div>
           <nav className="hidden md:flex space-x-8">
