@@ -3,8 +3,8 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/21addb35-09cb-4111-8c46-d805c87f575e.png"
-          alt="Sunset gradient background"
+          src="/lovable-uploads/78744267-f7e4-471a-9eb1-fa2c0e59bb5a.png"
+          alt="Vintage record player with art prints"
           className="w-full h-full object-cover opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
