@@ -1,6 +1,15 @@
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/lovable-uploads/7aeb2169-32bf-4cda-9fc4-fa1f0ae457df.png"
+          alt="DJ performing at a venue"
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+      
       {/* Collage Background */}
       <div className="absolute inset-0 z-0">
         <div className="grid grid-cols-3 gap-4 p-8 h-full">
