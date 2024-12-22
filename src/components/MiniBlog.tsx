@@ -1,4 +1,9 @@
+import { useState } from "react";
+import { BlogPostDialog } from "./BlogPostDialog";
+
 export const MiniBlog = () => {
+  const [selectedPost, setSelectedPost] = useState<null | any>(null);
+  
   const posts = [
     {
       title: "The Revival of Vinyl",
@@ -37,7 +42,8 @@ export const MiniBlog = () => {
           {posts.map((post) => (
             <article
               key={post.title}
-              className="group relative overflow-hidden rounded-lg"
+              className="group relative overflow-hidden rounded-lg cursor-pointer"
+              onClick={() => setSelectedPost(post)}
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <img
@@ -55,6 +61,14 @@ export const MiniBlog = () => {
           ))}
         </div>
       </div>
+      
+      {selectedPost && (
+        <BlogPostDialog
+          post={selectedPost}
+          isOpen={!!selectedPost}
+          onClose={() => setSelectedPost(null)}
+        />
+      )}
     </section>
   );
 };
