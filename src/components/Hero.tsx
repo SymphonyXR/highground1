@@ -4,8 +4,8 @@ export const Hero = () => {
       {/* Collage Background */}
       <div className="absolute inset-0 z-0">
         <div className="grid grid-cols-3 gap-4 p-8 h-full">
-          {/* First Column */}
-          <div className="space-y-4">
+          {/* First Column - Moving Up */}
+          <div className="space-y-4 animate-float-up">
             <div className="h-1/2 relative overflow-hidden rounded-lg transform hover:scale-105 transition-transform duration-500">
               <img
                 src="/lovable-uploads/d70e16e9-2a91-4285-ad24-1587e2ab86bb.png"
@@ -22,8 +22,8 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Center Column */}
-          <div className="space-y-4">
+          {/* Center Column - Moving Down */}
+          <div className="space-y-4 animate-float-down">
             <div className="h-2/3 relative overflow-hidden rounded-lg transform hover:scale-105 transition-transform duration-500">
               <img
                 src="/lovable-uploads/6ac85483-9a52-4d26-b688-d129dc3af331.png"
@@ -40,8 +40,8 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Last Column */}
-          <div className="space-y-4">
+          {/* Last Column - Moving Up */}
+          <div className="space-y-4 animate-float-up">
             <div className="h-1/3 relative overflow-hidden rounded-lg transform hover:scale-105 transition-transform duration-500">
               <img
                 src="/lovable-uploads/30521fe8-df0a-4193-b268-3ee302487c11.png"
