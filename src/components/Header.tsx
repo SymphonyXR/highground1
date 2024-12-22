@@ -22,31 +22,28 @@ export const Header = () => {
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             {/* Audio Player */}
-            <div className="flex items-center mr-4">
-              <audio
-                ref={audioRef}
-                autoPlay
-                loop
-                muted={isMuted}
-                className="hidden"
-                // Replace this URL with your actual audio file
-                src="https://example.com/your-audio-file.mp3"
-              />
-              <div className="round">
-                <input
-                  type="checkbox"
-                  checked={!isMuted}
-                  onChange={toggleMute}
-                  id="onoff"
-                />
-                <label htmlFor="onoff" className="back">
-                  <span className="but">
-                    <span className="on">ON</span>
-                    <span className="off">OFF</span>
-                  </span>
-                </label>
+            <audio
+              ref={audioRef}
+              autoPlay
+              loop
+              muted={isMuted}
+              className="hidden"
+              // Replace this URL with your actual audio file
+              src="https://example.com/your-audio-file.mp3"
+            />
+            <input 
+              type="checkbox" 
+              name="check-toggle" 
+              id="checkbox" 
+              hidden 
+              checked={!isMuted}
+              onChange={toggleMute}
+            />
+            <label htmlFor="checkbox" className="toggle">
+              <div className="toggle__switch">
+                <div className="toggle__circle"></div>
               </div>
-            </div>
+            </label>
             {["Events", "Music", "Community", "Blog"].map((item) => (
               <a
                 key={item}
