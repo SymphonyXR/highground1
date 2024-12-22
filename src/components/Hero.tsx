@@ -1,15 +1,18 @@
+import { useState, useRef } from "react";
+
 export const Hero = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/lovable-uploads/7aeb2169-32bf-4cda-9fc4-fa1f0ae457df.png"
-          alt="DJ performing at a venue"
-          className="w-full h-full object-cover opacity-30"
-        />
-      </div>
-      
       {/* Collage Background */}
       <div className="absolute inset-0 z-0">
         <div className="grid grid-cols-3 gap-4 p-8 h-full">
@@ -75,15 +78,46 @@ export const Hero = () => {
           Timeless Aura
         </h1>
         <p className="text-xl md:text-2xl text-[#FDE1D3] mb-12 font-bold leading-relaxed animate-fade-in max-w-2xl mx-auto font-serif">
-          We build spaces where artists thrive. From studio sessions to live shows, High Ground is a place for raw talent lives and grows. Connect with fellow creators, share your sound, and push your art further than you thought possible.
+          We build spaces where artists thrive. From studio sessions to live shows, High Ground is a place where raw talent lives and grows 🌱. Connect with fellow creators, share your sound, and push your art further than you thought possible.
         </p>
-        <div className="flex justify-center gap-4">
-          <button className="px-8 py-3 bg-orange-900/20 backdrop-blur-sm border border-orange-400/20 rounded-lg text-orange-100 hover:bg-orange-800/30 transition-all">
-            Explore Events
-          </button>
-          <button className="px-8 py-3 bg-orange-600/80 rounded-lg text-orange-100 hover:bg-orange-700 transition-all">
-            Join Community
-          </button>
+        <div className="flex flex-col items-center gap-8">
+          <div className="flex justify-center gap-4">
+            <button className="px-8 py-3 bg-orange-900/20 backdrop-blur-sm border border-orange-400/20 rounded-lg text-orange-100 hover:bg-orange-800/30 transition-all">
+              Explore Events
+            </button>
+            <button className="px-8 py-3 bg-orange-600/80 rounded-lg text-orange-100 hover:bg-orange-700 transition-all">
+              Join Community
+            </button>
+          </div>
+          
+          {/* Audio Player with Custom Toggle */}
+          <div className="flex items-center gap-4">
+            <audio
+              ref={audioRef}
+              autoPlay
+              loop
+              muted={isMuted}
+              className="hidden"
+              // Replace this URL with your actual audio file
+              src="https://example.com/your-audio-file.mp3"
+            />
+            
+            {/* Custom Toggle Switch */}
+            <div className="round">
+              <input
+                type="checkbox"
+                checked={!isMuted}
+                onChange={toggleMute}
+                id="onoff"
+              />
+              <label htmlFor="onoff" className="back">
+                <span className="but">
+                  <span className="on">ON</span>
+                  <span className="off">OFF</span>
+                </span>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </section>
