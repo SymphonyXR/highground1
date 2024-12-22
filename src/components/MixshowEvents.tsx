@@ -27,8 +27,8 @@ export const MixshowEvents = () => {
         }}
       />
       
-      {/* Content section with glass effect */}
-      <div className="relative py-20 bg-[#8B4513]/20 backdrop-blur-sm">
+      {/* Content section with reduced blur effect */}
+      <div className="relative py-20 bg-[#8B4513]/20 backdrop-blur-[2px]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FDE1D3]">
             Upcoming Mixshows
