@@ -4,12 +4,12 @@
   gap: .2rem;
   font-weight: 900;
   font-size: 1.5rem;
-  color: #FDE1D3;
+  color: #003b00;
 }
 
 .toggle__switch {
   --bg-toggle: hsl(0, 0%, 100%);
-  --bg-circle: #FDE1D3;
+  --bg-circle: #003b00;
   --w-toggle-switch: 60px;
   --w-h-toggle-circle: 20px;
   --pd-toggle-switch: .5rem;
@@ -37,7 +37,7 @@
 }
 
 #checkbox:checked + .toggle > .toggle__switch {
-  --bg-toggle: #FDE1D3;
+  --bg-toggle: #003b00;
   --bg-circle: hsl(0, 0%, 96%);
-  box-shadow: 0 .3rem 5rem 0 hsla(96, 85%, 34%, 30%);
+  box-shadow: 0 .3rem 5rem 0 rgba(0, 59, 0, 0.3);
 }
