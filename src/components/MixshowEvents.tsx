@@ -44,7 +44,7 @@ export const MixshowEvents = () => {
                   alt={event.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#002600]/95 via-[#003b00]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FDE1D3]/60 via-[#FDE1D3]/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
                   <div className="text-sm font-bold text-[#FEC6A1] mb-2">
                     {event.date}
