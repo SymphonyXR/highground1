@@ -33,32 +33,50 @@ export const MiniBlog = () => {
   ];
 
   return (
-    <section className="py-20 bg-black">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-4xl font-bold mb-12 text-center text-orange-100">
-          Latest Stories
-        </h2>
-        <div className="space-y-8">
-          {posts.map((post) => (
-            <article
-              key={post.title}
-              className="group relative overflow-hidden rounded-lg cursor-pointer"
-              onClick={() => setSelectedPost(post)}
-            >
-              <div className="aspect-[16/9] overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-2xl font-bold text-orange-100 mb-2">{post.title}</h3>
-                <p className="text-orange-200/70 text-lg">{post.excerpt}</p>
-              </div>
-            </article>
-          ))}
+    <section className="relative">
+      {/* Desert background with blend and parallax effect */}
+      <div 
+        className="absolute inset-0 w-full h-full bg-repeat"
+        style={{
+          backgroundImage: 'url("/lovable-uploads/d61314f5-44ea-4e35-9ae2-8c07e777581e.png")',
+          backgroundSize: '600px',
+          opacity: 0.15,
+          transform: 'translateZ(-1px) scale(2)',
+          zIndex: -1,
+        }}
+      />
+      
+      {/* Gradient overlay for smooth blend */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none" style={{ height: '200px', top: '-200px' }} />
+      
+      {/* Content section with glass effect */}
+      <div className="relative py-20 bg-black/40 backdrop-blur-sm">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-4xl font-bold mb-12 text-center text-orange-100">
+            Latest Stories
+          </h2>
+          <div className="space-y-8">
+            {posts.map((post) => (
+              <article
+                key={post.title}
+                className="group relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                onClick={() => setSelectedPost(post)}
+              >
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-orange-100 mb-2">{post.title}</h3>
+                  <p className="text-orange-200/70 text-lg">{post.excerpt}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
       

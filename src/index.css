@@ -103,4 +103,13 @@
     background-color: #2337c6;
     border-radius: 20px;
   }
+
+  /* Add smooth parallax effect */
+  .parallax-scroll {
+    transform-style: preserve-3d;
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
