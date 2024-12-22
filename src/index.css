@@ -88,7 +88,7 @@
 @layer components {
   .custom-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: theme('colors.orange.600/50') transparent;
+    scrollbar-color: #2337c6 transparent;
   }
 
   .custom-scrollbar::-webkit-scrollbar {
@@ -100,7 +100,7 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color: theme('colors.orange.600/50');
+    background-color: #2337c6;
     border-radius: 20px;
   }
 }
