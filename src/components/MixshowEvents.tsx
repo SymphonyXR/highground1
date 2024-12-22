@@ -27,8 +27,8 @@ export const MixshowEvents = () => {
         }}
       />
       
-      {/* Content section without blur effect */}
-      <div className="relative py-20 bg-[#003b00]/20">
+      {/* Content section without background color overlay */}
+      <div className="relative py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FDE1D3]">
             Upcoming Mixshows
@@ -44,7 +44,7 @@ export const MixshowEvents = () => {
                   alt={event.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#003b00]/90 via-[#003b00]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#002600]/95 via-[#003b00]/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-6">
                   <div className="text-sm font-bold text-[#FEC6A1] mb-2">
                     {event.date}
