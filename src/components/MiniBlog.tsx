@@ -3,24 +3,24 @@ export const MiniBlog = () => {
     {
       title: "The Revival of Vinyl",
       excerpt: "Exploring the resurgence of analog sound in digital age",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+      image: "/lovable-uploads/3e6a0b27-fef7-494c-94a4-94ee635c6954.png",
     },
     {
       title: "Underground Scene",
       excerpt: "Meet the artists shaping the future of electronic music",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+      image: "/lovable-uploads/09ab2c54-f1ad-40db-99d1-c0cd7d524271.png",
     },
     {
       title: "Studio Sessions",
       excerpt: "Behind the scenes with emerging producers",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "/lovable-uploads/96276ff8-ebb1-4204-8d1b-3fa6fd0b3130.png",
     },
   ];
 
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">
+        <h2 className="text-4xl font-bold mb-12 text-center text-orange-100">
           Latest Stories
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -38,8 +38,8 @@ export const MiniBlog = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
               <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{post.title}</h3>
-                <p className="text-white/70 text-sm">{post.excerpt}</p>
+                <h3 className="text-xl font-bold text-orange-100 mb-2">{post.title}</h3>
+                <p className="text-orange-200/70 text-sm">{post.excerpt}</p>
               </div>
             </article>
           ))}
