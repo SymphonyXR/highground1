@@ -3,7 +3,7 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="/lovable-uploads/78744267-f7e4-471a-9eb1-fa2c0e59bb5a.png"
+          src="/lovable-uploads/c9b6fa79-de6f-49df-94bd-b1eac0a04f2e.png"
           alt="Vintage record player with art prints"
           className="w-full h-full object-cover opacity-80"
         />
@@ -12,7 +12,7 @@ export const Hero = () => {
       
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-100 via-orange-300 to-orange-100 bg-clip-text text-transparent animate-fade-in font-serif tracking-wider">
-          Build Aura
+          100+ Aura
         </h1>
         <p className="text-xl md:text-2xl text-[#FDE1D3] mb-12 font-bold leading-relaxed animate-fade-in max-w-2xl mx-auto font-serif">
           We build spaces where artists thrive. From studio sessions to live shows, High Ground is a place for raw talent lives and grows. Connect with fellow creators, share your sound, and push your art further than you thought possible.
