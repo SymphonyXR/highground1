@@ -41,20 +41,25 @@ export const TimelineEvent = ({ event, index, onClick }: TimelineEventProps) => 
             <span className="text-orange-300/80 text-sm font-medium mb-2 block">
               {event.date}
             </span>
-            <h3 className="text-[#FDE1D3] text-xl font-bold mb-2">
-              {event.title}
-            </h3>
-            <p className="text-orange-100/80 mb-4">
+            <div className="flex items-center justify-between gap-4 mb-2">
+              <h3 className="text-[#FDE1D3] text-xl font-bold">
+                {event.title}
+              </h3>
+              {isExpanded && (
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClick(event);
+                  }}
+                  className="bg-gradient-to-r from-green-700 to-green-900 hover:from-green-600 hover:to-green-800 text-white transition-all duration-300"
+                >
+                  Learn More
+                </Button>
+              )}
+            </div>
+            <p className="text-orange-100/80">
               {event.description}
             </p>
-            {isExpanded && (
-              <Button
-                onClick={() => onClick(event)}
-                className="w-full bg-gradient-to-r from-green-700 to-green-900 hover:from-green-600 hover:to-green-800 text-white transition-all duration-300"
-              >
-                Learn More
-              </Button>
-            )}
           </div>
         </div>
       </div>
