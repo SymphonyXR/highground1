@@ -4,7 +4,7 @@ import { Event } from "@/types/event";
 import { TimelineEvent } from "./TimelineEvent";
 import { EventModal } from "./EventModal";
 import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export const Events = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -44,6 +44,10 @@ export const Events = () => {
     setVisibleEvents(prev => Math.min(prev + 2, events.length));
   };
 
+  const handleShowLess = () => {
+    setVisibleEvents(prev => Math.max(prev - 2, 3));
+  };
+
   return (
     <section className="relative py-24">
       {/* Desert Background with higher opacity overlay */}
@@ -71,16 +75,25 @@ export const Events = () => {
           ))}
         </div>
 
-        {visibleEvents < events.length && (
-          <div className="flex justify-end mt-8">
+        <div className="flex justify-center gap-4 mt-8">
+          {visibleEvents > 3 && (
+            <Button
+              onClick={handleShowLess}
+              className="bg-[#FDE1D3] text-black hover:bg-[#FEC6A1] transition-all duration-300"
+            >
+              <ChevronLeft className="mr-2 h-4 w-4" /> Back
+            </Button>
+          )}
+          
+          {visibleEvents < events.length && (
             <Button
               onClick={handleShowMore}
               className="bg-[#FDE1D3] text-black hover:bg-[#FEC6A1] transition-all duration-300"
             >
-              More <ChevronRight className="ml-2 h-4 w-4" />
+              Next <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       <EventModal 
