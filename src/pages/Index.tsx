@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { MixshowEvents } from "@/components/MixshowEvents";
 import { MiniBlog } from "@/components/MiniBlog";
+import { Events } from "@/components/Events";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
         <Hero />
         <MixshowEvents />
         <MiniBlog />
+        <Events />
       </main>
     </div>
   );

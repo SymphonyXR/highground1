@@ -68,7 +68,7 @@ export const Hero = () => {
           Timeless Aura
         </h1>
         <p className="text-xl md:text-2xl text-[#FDE1D3] mb-12 font-bold leading-relaxed animate-fade-in max-w-2xl mx-auto font-serif">
-          We build spaces where artists thrive. From studio sessions to live shows, High Ground is a place where raw talent lives and grows🌱 Connect with fellow creators, share your sound, and push your art further than you thought possible.
+          We build spaces for artists to thrive. From studio sessions to live shows, High Ground is a place where raw talent lives and grows🌱 Connect with fellow creators, share your sound, and push your art further than you thought possible.
         </p>
         <div className="flex flex-col items-center gap-8">
           <div className="flex justify-center gap-4">
