@@ -1,4 +1,10 @@
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { ChevronRight } from "lucide-react";
+
 export const MixshowEvents = () => {
+  const [visibleEvents, setVisibleEvents] = useState(2);
+  
   const events = [
     {
       title: "Neon Nights",
@@ -12,7 +18,23 @@ export const MixshowEvents = () => {
       image: "/lovable-uploads/96276ff8-ebb1-4204-8d1b-3fa6fd0b3130.png",
       artist: "Vinyl Queen",
     },
+    {
+      title: "Desert Soundscape",
+      date: "MAR 29",
+      image: "/lovable-uploads/3e6a0b27-fef7-494c-94a4-94ee635c6954.png",
+      artist: "Desert Rose",
+    },
+    {
+      title: "Midnight Echo",
+      date: "APR 5",
+      image: "/lovable-uploads/96276ff8-ebb1-4204-8d1b-3fa6fd0b3130.png",
+      artist: "Echo Chamber",
+    },
   ];
+
+  const handleShowMore = () => {
+    setVisibleEvents(prev => Math.min(prev + 2, events.length));
+  };
 
   return (
     <section className="relative">
@@ -34,7 +56,7 @@ export const MixshowEvents = () => {
             Upcoming Mixshows
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {events.map((event) => (
+            {events.slice(0, visibleEvents).map((event) => (
               <div
                 key={event.title}
                 className="group relative overflow-hidden rounded-lg aspect-video hover:scale-[1.02] transition-transform"
@@ -57,6 +79,18 @@ export const MixshowEvents = () => {
               </div>
             ))}
           </div>
+          
+          {/* More button */}
+          {visibleEvents < events.length && (
+            <div className="flex justify-center mt-8">
+              <Button
+                onClick={handleShowMore}
+                className="bg-[#FDE1D3] text-black hover:bg-[#FEC6A1] transition-all duration-300"
+              >
+                More <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
