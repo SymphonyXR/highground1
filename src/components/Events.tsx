@@ -55,10 +55,10 @@ export const Events = () => {
                 />
                 
                 {/* Node */}
-                <div className="absolute top-7 w-4 h-4 rounded-full bg-orange-400/80 shadow-lg shadow-orange-900/20
+                <div className={`absolute top-7 w-4 h-4 rounded-full bg-orange-400/80 shadow-lg shadow-orange-900/20
                   transform -translate-y-1/2
                   hover:scale-150 transition-transform duration-300
-                  ${index % 2 === 0 ? 'right-0 translate-x-full -translate-x-2' : 'left-0 -translate-x-full translate-x-2'}" 
+                  ${index % 2 === 0 ? 'right-0 translate-x-full -translate-x-2' : 'left-0 -translate-x-full translate-x-2'}`} 
                 />
                 
                 <div className="bg-orange-900/20 backdrop-blur-sm p-6 rounded-lg border border-orange-400/20
