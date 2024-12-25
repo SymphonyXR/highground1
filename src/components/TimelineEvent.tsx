@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Event } from "@/types/event";
 
 interface TimelineEventProps {
@@ -8,13 +8,6 @@ interface TimelineEventProps {
 }
 
 export const TimelineEvent = ({ event, index, onClick }: TimelineEventProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const handleClick = () => {
-    setIsExpanded(true);
-    onClick(event);
-  };
-
   return (
     <div className="relative flex items-start mb-16 last:mb-0">
       <div className="absolute left-1/2 top-0 h-full w-px bg-orange-300/30 -translate-x-1/2" />
@@ -35,7 +28,7 @@ export const TimelineEvent = ({ event, index, onClick }: TimelineEventProps) => 
           className="bg-orange-900/20 backdrop-blur-sm rounded-lg border border-orange-400/20
             transform hover:scale-105 transition-all duration-300
             hover:bg-orange-800/30 overflow-hidden cursor-pointer"
-          onClick={handleClick}
+          onClick={() => onClick(event)}
         >
           <div className="p-6">
             <span className="text-orange-300/80 text-sm font-medium mb-2 block">
