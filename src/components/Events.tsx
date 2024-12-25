@@ -29,7 +29,16 @@ export const Events = () => {
         .order('date', { ascending: true });
 
       if (error) throw error;
-      setEvents(data || []);
+
+      // Validate and transform the media_type to ensure it matches our Event interface
+      const validatedEvents: Event[] = (data || []).map(event => ({
+        ...event,
+        media_type: event.media_type === 'image' || event.media_type === 'video' 
+          ? event.media_type 
+          : undefined
+      }));
+
+      setEvents(validatedEvents);
     } catch (error) {
       console.error('Error fetching events:', error);
     } finally {
@@ -44,7 +53,7 @@ export const Events = () => {
         className="absolute inset-0 z-0 bg-repeat"
         style={{
           backgroundImage: `url('/lovable-uploads/4eaeaf66-2e5d-4d59-9234-fc112fb28a94.png')`,
-          opacity: 0.2  // Increased from 0.1 to 0.2 for higher opacity
+          opacity: 0.2
         }}
       />
       
