@@ -33,6 +33,129 @@ export type Database = {
         }
         Relationships: []
       }
+      elevate_challenges: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          prize_description: string
+          status: string
+          submission_deadline: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          prize_description: string
+          status: string
+          submission_deadline?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          prize_description?: string
+          status?: string
+          submission_deadline?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      elevate_community_projects: {
+        Row: {
+          created_at: string
+          description: string
+          id: string
+          media_url: string | null
+          project_type: string
+          status: string
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          id?: string
+          media_url?: string | null
+          project_type: string
+          status: string
+          title: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          id?: string
+          media_url?: string | null
+          project_type?: string
+          status?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      elevate_content_series: {
+        Row: {
+          created_at: string
+          creator_name: string
+          description: string
+          id: string
+          media_type: string | null
+          media_url: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          creator_name: string
+          description: string
+          id?: string
+          media_type?: string | null
+          media_url?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          creator_name?: string
+          description?: string
+          id?: string
+          media_type?: string | null
+          media_url?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      elevate_programs: {
+        Row: {
+          capacity: number | null
+          created_at: string
+          description: string
+          end_date: string | null
+          id: string
+          program_type: string
+          start_date: string | null
+          title: string
+        }
+        Insert: {
+          capacity?: number | null
+          created_at?: string
+          description: string
+          end_date?: string | null
+          id?: string
+          program_type: string
+          start_date?: string | null
+          title: string
+        }
+        Update: {
+          capacity?: number | null
+          created_at?: string
+          description?: string
+          end_date?: string | null
+          id?: string
+          program_type?: string
+          start_date?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           content: string | null

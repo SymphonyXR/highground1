@@ -4,6 +4,7 @@ import { MixshowEvents } from "@/components/MixshowEvents";
 import { MiniBlog } from "@/components/MiniBlog";
 import { Events } from "@/components/Events";
 import { AboveTheNoise } from "@/components/AboveTheNoise";
+import { ElevateEverything } from "@/components/ElevateEverything";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <MiniBlog />
         <Events />
         <AboveTheNoise />
+        <ElevateEverything />
       </main>
     </div>
   );
