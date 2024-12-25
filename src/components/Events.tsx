@@ -50,7 +50,6 @@ export const Events = () => {
 
   return (
     <section className="relative py-24">
-      {/* Desert Background with higher opacity overlay */}
       <div 
         className="absolute inset-0 z-0 bg-repeat"
         style={{

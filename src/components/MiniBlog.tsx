@@ -20,21 +20,10 @@ export const MiniBlog = () => {
       excerpt: "Behind the scenes with emerging producers",
       image: "/lovable-uploads/038d0e28-85fd-4a80-b8c2-75b5cf9e2340.png",
     },
-    {
-      title: "The Art of Jazz",
-      excerpt: "A deep dive into contemporary jazz movements",
-      image: "/lovable-uploads/69e75ab4-27a0-4f8d-bff1-501410fb14db.png",
-    },
-    {
-      title: "Beach Vibes Festival",
-      excerpt: "Capturing moments from our biggest event yet",
-      image: "/lovable-uploads/6fb03dd3-1be0-4748-8ad0-539d40a26787.png",
-    },
   ];
 
   return (
     <section className="relative">
-      {/* Content section with glass effect */}
       <div className="relative py-20 bg-[#8B4513]/20 backdrop-blur-sm">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-4xl font-bold mb-12 text-center text-[#FDE1D3]">
