@@ -3,9 +3,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { Event } from "@/types/event";
 import { TimelineEvent } from "./TimelineEvent";
 import { EventModal } from "./EventModal";
+import { Button } from "./ui/button";
+import { ChevronRight } from "lucide-react";
 
 export const Events = () => {
   const [events, setEvents] = useState<Event[]>([]);
+  const [visibleEvents, setVisibleEvents] = useState<number>(3);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -37,6 +40,10 @@ export const Events = () => {
     }
   };
 
+  const handleShowMore = () => {
+    setVisibleEvents(prev => Math.min(prev + 2, events.length));
+  };
+
   return (
     <section className="relative py-24">
       {/* Desert Background with higher opacity overlay */}
@@ -54,7 +61,7 @@ export const Events = () => {
         </h2>
         
         <div className="max-w-4xl mx-auto">
-          {events.map((event, index) => (
+          {events.slice(0, visibleEvents).map((event, index) => (
             <TimelineEvent
               key={event.id}
               event={event}
@@ -63,6 +70,17 @@ export const Events = () => {
             />
           ))}
         </div>
+
+        {visibleEvents < events.length && (
+          <div className="flex justify-end mt-8">
+            <Button
+              onClick={handleShowMore}
+              className="bg-[#FDE1D3] text-black hover:bg-[#FEC6A1] transition-all duration-300"
+            >
+              More <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        )}
       </div>
 
       <EventModal 

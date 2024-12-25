@@ -9,6 +9,30 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      community_shoutouts: {
+        Row: {
+          achievement: string
+          created_at: string
+          id: string
+          member_name: string
+          photo_url: string | null
+        }
+        Insert: {
+          achievement: string
+          created_at?: string
+          id?: string
+          member_name: string
+          photo_url?: string | null
+        }
+        Update: {
+          achievement?: string
+          created_at?: string
+          id?: string
+          member_name?: string
+          photo_url?: string | null
+        }
+        Relationships: []
+      }
       events: {
         Row: {
           content: string | null
@@ -39,6 +63,105 @@ export type Database = {
           media_type?: string | null
           media_url?: string | null
           title?: string
+        }
+        Relationships: []
+      }
+      guides_tips: {
+        Row: {
+          category: string
+          content: string
+          created_at: string
+          id: string
+          title: string
+        }
+        Insert: {
+          category: string
+          content: string
+          created_at?: string
+          id?: string
+          title: string
+        }
+        Update: {
+          category?: string
+          content?: string
+          created_at?: string
+          id?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      mood_board: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          image_url: string
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url: string
+          type: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          image_url?: string
+          type?: string
+        }
+        Relationships: []
+      }
+      playlists: {
+        Row: {
+          created_at: string
+          id: string
+          playlist_url: string
+          theme: string
+          thumbnail_url: string | null
+          title: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          playlist_url: string
+          theme: string
+          thumbnail_url?: string | null
+          title: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          playlist_url?: string
+          theme?: string
+          thumbnail_url?: string | null
+          title?: string
+        }
+        Relationships: []
+      }
+      quotes: {
+        Row: {
+          author: string | null
+          category: string
+          content: string
+          created_at: string
+          id: string
+        }
+        Insert: {
+          author?: string | null
+          category: string
+          content: string
+          created_at?: string
+          id?: string
+        }
+        Update: {
+          author?: string | null
+          category?: string
+          content?: string
+          created_at?: string
+          id?: string
         }
         Relationships: []
       }
