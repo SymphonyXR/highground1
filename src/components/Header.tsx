@@ -68,7 +68,7 @@ export const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-2xl font-bold" style={{ color: '#ab7e4c' }}>
+          <Link to="/" className="text-2xl font-bold" style={{ color: '#f7e98e' }}>
             High Ground
           </Link>
           <nav className="hidden md:flex items-center space-x-8">
@@ -95,9 +95,7 @@ export const Header = () => {
             </label>
             {[
               ["Events", "#"],
-              ["Mixshow", "/mixshow"],
-              ["Community", "#"],
-              ["Blog", "#"]
+              ["Community", "#"]
             ].map(([item, path]) => (
               <Link
                 key={item}
