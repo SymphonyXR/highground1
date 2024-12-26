@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Event } from "@/types/event";
 import { MiniBlog } from "@/components/MiniBlog";
 import { MenuBar } from "@/components/mixshow/MenuBar";
@@ -34,6 +35,16 @@ const Mixshow = () => {
         backgroundAttachment: 'fixed'
       }}
     >
+      <div className="fixed top-0 w-full z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center h-16">
+            <Link to="/" className="text-2xl font-bold text-[#f7e98e] hover:opacity-80 transition-opacity">
+              High Ground
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <MenuBar selectedModal={selectedModal} setSelectedModal={setSelectedModal} />
 
       <div className="container mx-auto px-4 py-24">
