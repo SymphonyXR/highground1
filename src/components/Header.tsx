@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -21,14 +22,12 @@ export const Header = () => {
             High Ground
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            {/* Audio Player */}
             <audio
               ref={audioRef}
               autoPlay
               loop
               muted={isMuted}
               className="hidden"
-              // Replace this URL with your actual audio file
               src="https://example.com/your-audio-file.mp3"
             />
             <input 
@@ -44,14 +43,19 @@ export const Header = () => {
                 <div className="toggle__circle"></div>
               </div>
             </label>
-            {["Events", "Music", "Community", "Blog"].map((item) => (
-              <a
+            {[
+              ["Events", "#"],
+              ["Mixshow", "/mixshow"],
+              ["Community", "#"],
+              ["Blog", "#"]
+            ].map(([item, path]) => (
+              <Link
                 key={item}
-                href="#"
+                to={path}
                 className="text-white/80 hover:text-white transition-colors"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </nav>
           <Button variant="ghost" size="icon" className="md:hidden">
