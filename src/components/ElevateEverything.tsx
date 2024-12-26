@@ -46,7 +46,7 @@ export const ElevateEverything = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
         style={{
-          backgroundImage: `url('/lovable-uploads/9f7dcd22-addb-41fe-a7c5-f8d484fd73ce.png')`,
+          backgroundImage: `url('/lovable-uploads/166999e1-7584-4caf-8523-0ed03f208ec6.png')`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-0" />
