@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { TimelineEvent } from "@/components/TimelineEvent";
 import { Event } from "@/types/event";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { MiniBlog } from "@/components/MiniBlog";
 
 const Mixshow = () => {
   const [showMixesPage, setShowMixesPage] = useState(false);
@@ -132,6 +133,16 @@ const Mixshow = () => {
               )}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* New Stories Section with 🡱🡳 title */}
+      <div className="relative py-20 bg-[#8B4513]/20 backdrop-blur-sm mt-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-4xl font-bold mb-12 text-center text-[#FDE1D3]">
+            🡱🡳
+          </h2>
+          <MiniBlog />
         </div>
       </div>
 
