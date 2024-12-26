@@ -46,7 +46,7 @@ export const ElevateEverything = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
         style={{
-          backgroundImage: `url('/lovable-uploads/8773117d-b287-45b0-ba92-207e05987c41.png')`,
+          backgroundImage: `url('/lovable-uploads/dc855415-e048-4b61-82f9-dea00ea5a140.png')`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-0" />
@@ -59,7 +59,7 @@ export const ElevateEverything = () => {
           <div className="prose prose-invert mx-auto">
             <p className="text-lg md:text-xl leading-relaxed font-light">
               At High Ground we believe that creativity knows no bounds. With the right tools, 
-              community and vision, you can Elevate Everything — from your craft to your mindset, 
+              community and vision, you can Elevate Everything from your craft to your mindset, 
               from your art to your legacy.
             </p>
           </div>
