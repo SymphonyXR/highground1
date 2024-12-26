@@ -1,4 +1,5 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Link } from "react-router-dom";
 
 interface MenuBarProps {
   selectedModal: string | null;
@@ -51,22 +52,27 @@ export const MenuBar = ({ selectedModal, setSelectedModal }: MenuBarProps) => {
   return (
     <div className="bg-black/50 backdrop-blur-sm py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <nav className="flex justify-center space-x-8">
-          {menuItems.map((item) => (
+        <nav className="flex justify-between items-center">
+          <Link to="/" className="text-2xl font-bold text-[#f7e98e] hover:opacity-80 transition-opacity">
+            High Ground
+          </Link>
+          <div className="flex space-x-8">
+            {menuItems.map((item) => (
+              <button
+                key={item.title}
+                onClick={() => setSelectedModal(item.title)}
+                className="text-white hover:text-gray-300 transition-colors"
+              >
+                {item.title}
+              </button>
+            ))}
             <button
-              key={item.title}
-              onClick={() => setSelectedModal(item.title)}
+              onClick={() => setSelectedModal("Shop")}
               className="text-white hover:text-gray-300 transition-colors"
             >
-              {item.title}
+              Shop
             </button>
-          ))}
-          <button
-            onClick={() => setSelectedModal("Shop")}
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            Shop
-          </button>
+          </div>
         </nav>
       </div>
 
