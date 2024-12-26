@@ -74,22 +74,22 @@ export const Events = () => {
           ))}
         </div>
 
-        <div className="flex justify-end gap-4 mt-4 max-w-4xl mx-auto">
+        <div className="flex justify-center gap-4 mt-8 max-w-4xl mx-auto">
           {visibleEvents > 3 && (
             <Button
               onClick={handleShowLess}
-              className="bg-gradient-to-r from-amber-200 to-amber-400 text-black hover:from-amber-300 hover:to-amber-500 transition-all duration-300"
+              className="bg-gradient-to-r from-amber-200 to-amber-400 text-black hover:from-amber-300 hover:to-amber-500 transition-all duration-300 px-6 py-2 rounded-full shadow-lg hover:shadow-amber-500/20"
             >
-              <ChevronLeft className="mr-2 h-4 w-4" /> Back
+              <ChevronLeft className="mr-2 h-4 w-4" /> Previous Events
             </Button>
           )}
           
           {visibleEvents < events.length && (
             <Button
               onClick={handleShowMore}
-              className="bg-gradient-to-r from-amber-200 to-amber-400 text-black hover:from-amber-300 hover:to-amber-500 transition-all duration-300"
+              className="bg-gradient-to-r from-amber-200 to-amber-400 text-black hover:from-amber-300 hover:to-amber-500 transition-all duration-300 px-6 py-2 rounded-full shadow-lg hover:shadow-amber-500/20"
             >
-              Next <ChevronRight className="ml-2 h-4 w-4" />
+              More Events <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           )}
         </div>
