@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { TimelineEvent } from "@/components/TimelineEvent";
 import { Event } from "@/types/event";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { MixshowEvents } from "@/components/MixshowEvents";
 
 const Mixshow = () => {
   const [showMixesPage, setShowMixesPage] = useState(false);
@@ -133,12 +132,6 @@ const Mixshow = () => {
               )}
             </div>
           </div>
-        </div>
-
-        {/* Latest Stories Style Section */}
-        <div className="mt-20">
-          <h2 className="text-4xl font-bold mb-12 text-center">🡱🡳</h2>
-          <MixshowEvents />
         </div>
       </div>
 
