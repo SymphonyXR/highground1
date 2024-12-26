@@ -139,7 +139,10 @@ const Mixshow = () => {
       {/* New Stories Section with 🡱🡳 title */}
       <div className="relative py-20 mt-12">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-4xl font-bold mb-12 text-center text-[#FDE1D3]">
+          <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: '#06402b' }}>
+            Latest Stories
+          </h2>
+          <h2 className="text-4xl font-bold mb-12 text-center" style={{ color: '#06402b' }}>
             🡱🡳
           </h2>
           <MiniBlog />
