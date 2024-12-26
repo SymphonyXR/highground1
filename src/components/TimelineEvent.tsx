@@ -27,14 +27,23 @@ export const TimelineEvent = ({ event, index, onClick }: TimelineEventProps) => 
         <div 
           className="bg-orange-900/20 backdrop-blur-sm rounded-lg border border-orange-400/20
             transform hover:scale-105 transition-all duration-300
-            hover:bg-orange-800/30 overflow-hidden cursor-pointer"
+            hover:bg-orange-800/30 overflow-hidden cursor-pointer max-h-[400px]"
           onClick={() => onClick(event)}
         >
+          {event.media_url && (
+            <div className="w-full h-48 overflow-hidden">
+              <img 
+                src={event.media_url} 
+                alt={event.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
           <div className="p-6">
             <span className="text-orange-300/80 text-sm font-medium mb-2 block">
               {event.date}
             </span>
-            <h3 className="text-[#FDE1D3] text-xl font-bold mb-2">
+            <h3 className="text-[#e69b00] text-xl font-bold mb-2">
               {event.title}
             </h3>
             <p className="text-orange-100/80">
