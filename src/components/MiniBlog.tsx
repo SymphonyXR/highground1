@@ -1,45 +1,66 @@
-import { Card } from "@/components/ui/card";
+import { useState } from "react";
+import { BlogPostDialog } from "./BlogPostDialog";
 
 export const MiniBlog = () => {
+  const [selectedPost, setSelectedPost] = useState<null | any>(null);
+  
   const posts = [
     {
-      title: "Al Toque Mix Set",
-      description: "DJ Plasma takes us on a journey through Psychedelic Cumbia and Chicha at Lima's newest hotspot. Experience the fusion of traditional Peruvian rhythms with modern electronic elements.",
-      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838"
+      title: "The Revival of Vinyl",
+      excerpt: "Exploring the resurgence of analog sound in digital age",
+      image: "/lovable-uploads/f6fe3779-c9b0-4232-8696-5ca600eda731.png",
     },
     {
-      title: "Andean Nights",
-      description: "Live from the heights of Cusco, featuring traditional huayno rhythms blended with contemporary beats. A showcase of Peru's rich musical heritage with zampoñas and charangos.",
-      image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3"
+      title: "Underground Scene",
+      excerpt: "Meet the artists shaping the future of electronic music",
+      image: "/lovable-uploads/7cc6fa95-63de-44d3-9895-7cf251017bf4.png",
     },
     {
-      title: "Studio Sessions: Mestizo Beats",
-      description: "Recorded at High Ground Studios, this set explores the intersection of Peruvian coastal rhythms and electronic music, featuring cajón and traditional guitar samples.",
-      image: "https://images.unsplash.com/photo-1452378174528-3090a4bba7b2"
-    }
+      title: "Studio Sessions",
+      excerpt: "Behind the scenes with emerging producers",
+      image: "/lovable-uploads/038d0e28-85fd-4a80-b8c2-75b5cf9e2340.png",
+    },
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-4xl font-bold text-white text-center mb-12">🡱🡳</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post, index) => (
-          <Card key={index} className="bg-black/40 border-none overflow-hidden hover:scale-105 transition-transform duration-300">
-            <div className="aspect-video relative">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-bold text-white mb-2">{post.title}</h3>
-              <p className="text-gray-300 text-sm">{post.description}</p>
-            </div>
-          </Card>
-        ))}
+    <section className="relative">
+      <div className="relative py-20 bg-[#8B4513]/20 backdrop-blur-sm">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-4xl font-bold mb-12 text-center text-white">
+            🡱🡳
+          </h2>
+          <div className="space-y-8">
+            {posts.map((post) => (
+              <article
+                key={post.title}
+                className="group relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                onClick={() => setSelectedPost(post)}
+              >
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#8B4513] via-[#8B4513]/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <h3 className="text-2xl font-bold text-[#FDE1D3] mb-2">{post.title}</h3>
+                  <p className="text-[#FEC6A1] text-lg">{post.excerpt}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+      
+      {selectedPost && (
+        <BlogPostDialog
+          post={selectedPost}
+          isOpen={!!selectedPost}
+          onClose={() => setSelectedPost(null)}
+        />
+      )}
+    </section>
   );
 };
