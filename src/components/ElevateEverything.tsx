@@ -44,11 +44,12 @@ export const ElevateEverything = () => {
   return (
     <section className="py-16 relative overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
         style={{
-          backgroundImage: `url('/lovable-uploads/4915d59e-d5db-49bc-acab-3a1b28ed0d2e.png')`,
+          backgroundImage: `url('/lovable-uploads/9f7dcd22-addb-41fe-a7c5-f8d484fd73ce.png')`,
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40 z-0" />
       
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12 space-y-6">

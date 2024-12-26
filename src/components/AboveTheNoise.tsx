@@ -1,8 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { VideoBackground } from "./above-the-noise/VideoBackground";
 import { PlaylistGrid } from "./above-the-noise/PlaylistGrid";
 import { VisualsGrid } from "./above-the-noise/VisualsGrid";
 import { QuotesList } from "./above-the-noise/QuotesList";
@@ -72,7 +70,13 @@ export const AboveTheNoise = () => {
 
   return (
     <section className="relative py-24">
-      <VideoBackground />
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{
+          backgroundImage: `url('/lovable-uploads/166999e1-7584-4caf-8523-0ed03f208ec6.png')`,
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-0" />
       
       <div className="container mx-auto px-4 relative z-20">
         <h2 className="text-4xl font-bold mb-8 text-center text-[#FDE1D3]">
@@ -83,35 +87,13 @@ export const AboveTheNoise = () => {
           visual art, and community wisdom.
         </p>
 
-        <Tabs defaultValue="playlists" className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 mb-8">
-            <TabsTrigger value="playlists">Playlists</TabsTrigger>
-            <TabsTrigger value="visuals">Visuals</TabsTrigger>
-            <TabsTrigger value="quotes">Quotes</TabsTrigger>
-            <TabsTrigger value="community">Community</TabsTrigger>
-            <TabsTrigger value="tips">Tips</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="playlists">
-            <PlaylistGrid playlists={playlists || []} />
-          </TabsContent>
-
-          <TabsContent value="visuals">
-            <VisualsGrid items={moodBoard || []} />
-          </TabsContent>
-
-          <TabsContent value="quotes">
-            <QuotesList quotes={quotes || []} />
-          </TabsContent>
-
-          <TabsContent value="community">
-            <ShoutoutGrid shoutouts={shoutouts || []} />
-          </TabsContent>
-
-          <TabsContent value="tips">
-            <TipsGrid tips={tips || []} />
-          </TabsContent>
-        </Tabs>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <PlaylistGrid playlists={playlists || []} />
+          <VisualsGrid items={moodBoard || []} />
+          <QuotesList quotes={quotes || []} />
+          <ShoutoutGrid shoutouts={shoutouts || []} />
+          <TipsGrid tips={tips || []} />
+        </div>
       </div>
     </section>
   );
